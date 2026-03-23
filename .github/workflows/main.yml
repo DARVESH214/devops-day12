@@ -1,6 +1,16 @@
-git clone https://github.com/your-username/devops-day12.git
-cd devops-day12
-echo "CI/CD mama 🔥" > index.html
-git add .
-git commit -m "first commit"
-git push
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: echo "Build Success 🔥"
