@@ -1,14 +1,8 @@
-
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
+- name: build
+  run: concurrency: 
+    echo "starting buid..."
+    ls
+    cat index.html
 
     steps:
       - uses: actions/checkout@v3
